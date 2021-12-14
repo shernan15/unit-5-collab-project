@@ -7,9 +7,23 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         pause(1000)
         callAll()
     } else {
-    	
+        callAllFlower()
+        pause(1000)
+        callAllFlower()
     }
 })
+function callAllFlower () {
+    flower()
+    pause(1000)
+    flower()
+    pause(1000)
+    flower()
+    pause(1000)
+    flower()
+    pause(1000)
+    flower()
+    pause(1000)
+}
 function snow () {
     for (let index = 0; index < 10; index++) {
         projectile2 = sprites.createProjectileFromSide(img`
@@ -30,6 +44,11 @@ function snow () {
             . . . . . . . 1 1 1 . . . . 1 . 
             . . . . . . . . . . . . . . . . 
             `, randint(0, -50), randint(0, 50))
+    }
+}
+function flower () {
+    for (let index = 0; index < 10; index++) {
+        projectile2 = sprites.createProjectileFromSide(assets.image`Flower`, randint(0, -50), randint(0, 50))
     }
 }
 function callAll () {
