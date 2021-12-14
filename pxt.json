@@ -2,7 +2,9 @@
     "name": "Unit 5 Collab Project",
     "description": "",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "controller": "*",
+        "extension-snow": "pub:31447-71275-80215-95925"
     },
     "files": [
         "main.blocks",
