@@ -4,7 +4,8 @@
     "dependencies": {
         "device": "*",
         "controller": "*",
-        "extension-snow": "pub:31447-71275-80215-95925"
+        "extension-snow": "pub:31447-71275-80215-95925",
+        "Timers": "github:microsoft/arcade-timers#v1.1.0"
     },
     "files": [
         "main.blocks",
