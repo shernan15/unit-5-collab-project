@@ -50,9 +50,14 @@ function flower () {
         flower1 = sprites.createProjectileFromSide(assets.image`Flower`, randint(0, -50), randint(0, 50))
     }
 }
+function username (name: string) {
+    return "Hello " + name + "!"
+}
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    flower1.destroy()
     info.changeScoreBy(1)
+    pause(10000)
+    game.over(true)
+    game.reset()
 })
 function callAll () {
     snow()
@@ -70,9 +75,11 @@ let flower1: Sprite = null
 let Question = ""
 let Yes = ""
 scene.setBackgroundColor(3)
+let inputName = game.askForString("What is your name?", 8)
+let userName = username(inputName)
 let Cat = sprites.create(assets.image`Cat`, SpriteKind.Player)
 Cat.setPosition(77, 97)
-Cat.sayText("Did it snow yesterday? Press B to answer", 5000, false)
+Cat.sayText("" + userName + " Did it snow yesterday? Press B to answer", 5000, false)
 controller.moveSprite(Cat)
 Yes = "Yes"
 Cat.setStayInScreen(true)
